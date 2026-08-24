@@ -1,12 +1,1 @@
-```
-# Dependencies
-node_modules/
-
-# Editors
-.vscode/
-
-# Environment
-.env
-.env.local
-.env.*
-```
+Nothing should be ignored in this case, as the changes only include source files (.js, .html, .css) and the existing .gitignore is empty. No build artifacts, dependencies, or temporary files are present in the change list.
