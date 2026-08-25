@@ -1,36 +1,80 @@
 // Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links li');
 
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-}
-
-// Mode Switcher Functionality
-function toggleMode() {
-    const body = document.body;
-    const modeSwitcher = document.getElementById('modeSwitcher');
-    const currentMode = body.getAttribute('data-mode');
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
     
-    if (currentMode === 'normal') {
-        body.setAttribute('data-mode', 'data-science');
-        modeSwitcher.innerHTML = '<i class="fas fa-user"></i><span>Normal Mode</span>';
-    } else {
-        body.setAttribute('data-mode', 'normal');
-        modeSwitcher.innerHTML = '<i class="fas fa-flask"></i><span>Data Science Mode</span>';
-    }
-}
+    // Animate Burger
+    burger.classList.toggle('toggle');
+});
 
-// Scroll animations
+// Close mobile menu when clicking on a link
+navLinksItems.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add active class to navigation based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Navbar background change on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    
+    if (window.scrollY > 100) {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+    } else {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+    }
+});
+
+// Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -39,48 +83,37 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-// Observe all fade-in elements
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+// Apply initial styles and observe elements
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.project-card, .skill-category, .education-card');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
 });
 
-// Add scroll event listener for navbar effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            const currentMode = document.body.getAttribute('data-mode');
-            if (currentMode === 'data-science') {
-                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            }
-        } else {
-            const currentMode = document.body.getAttribute('data-mode');
-            if (currentMode === 'data-science') {
-                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        }
-    }
+// Add hover effect to project cards
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
 });
+
+// Console message for developers
+console.log('%c Welcome to Md. Alfaz Nawaz Khan Shrabon\'s Portfolio! ', 
+    'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; border-radius: 5px; font-size: 14px; font-weight: bold;');
+console.log('%c Built with HTML, CSS, and JavaScript ', 
+    'color: #3498db; font-size: 12px;');
