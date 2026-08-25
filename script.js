@@ -3,6 +3,7 @@ const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const themeToggle = document.getElementById('theme-toggle');
+const dsModeToggle = document.getElementById('dsModeToggle');
 const navLinks = document.querySelectorAll('.nav-link');
 const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -18,6 +19,29 @@ themeToggle.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
 });
+
+// ===== Data Science Mode Toggle =====
+function initDSMode() {
+    const savedDSMode = localStorage.getItem('dsMode') || 'false';
+    if (savedDSMode === 'true') {
+        document.body.classList.add('ds-mode-active');
+    }
+}
+
+if (dsModeToggle) {
+    dsModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('ds-mode-active');
+        const isDSModeActive = document.body.classList.contains('ds-mode-active');
+        localStorage.setItem('dsMode', isDSModeActive);
+        
+        // Update button appearance
+        if (isDSModeActive) {
+            dsModeToggle.innerHTML = '<i class="fas fa-check"></i><span>DS Active</span>';
+        } else {
+            dsModeToggle.innerHTML = '<i class="fas fa-brain"></i><span>DS Mode</span>';
+        }
+    });
+}
 
 // ===== Mobile Navigation =====
 hamburger.addEventListener('click', () => {
@@ -79,6 +103,7 @@ fadeElements.forEach(element => observer.observe(element));
 // ===== Initialize on Load =====
 window.addEventListener('load', () => {
     initTheme();
+    initDSMode();
     handleScrollAnimation();
 });
 
@@ -113,6 +138,33 @@ window.addEventListener('scroll', () => {
         heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
     }
 });
+
+// ===== Typing Animation for About Section =====
+const typingText = document.querySelector('.typing-text');
+if (typingText) {
+    const textToType = "My journey into data analysis began with a curiosity about how data shapes decisions in the real world...";
+    let index = 0;
+    
+    function typeText() {
+        if (index < textToType.length) {
+            typingText.textContent += textToType.charAt(index);
+            index++;
+            setTimeout(typeText, 50);
+        }
+    }
+    
+    // Start typing when element is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                typeText();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    observer.observe(typingText);
+}
 
 console.log('%c👋 Hello, Developer!', 'font-size: 20px; font-weight: bold; color: #2dd4bf;');
 console.log('%cBuilt with ❤️ by Md. Alfaz Nawaz Khan Shrabon', 'font-size: 12px; color: #2dd4bf;');

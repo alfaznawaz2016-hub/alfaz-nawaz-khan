@@ -686,3 +686,445 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* ========================================
+   DATA SCIENCE MODE STYLES
+   ======================================== */
+
+/* DS Mode Toggle Button */
+.ds-mode-toggle {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #1aff40, #0a8f2a);
+    color: #020a02;
+    border: 2px solid #1aff40;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(26, 255, 64, 0.5);
+    transition: all 0.3s ease;
+}
+
+.ds-mode-toggle:hover {
+    box-shadow: 0 0 25px rgba(26, 255, 64, 0.8);
+    transform: scale(1.05);
+}
+
+.ds-mode-toggle i {
+    animation: pulse 2s infinite;
+}
+
+/* Glow Button Style */
+.glowbutton {
+    --glow-color: rgb(176, 252, 255);
+    --glow-spread-color: rgba(123, 255, 255, 0.781);
+    --enhanced-glow-color: rgb(206, 255, 255);
+    --btn-color: rgb(61, 127, 136);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.glowbutton::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.glowbutton:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.glowbutton:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+/* Hero Section DS Mode */
+.ds-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #020a02 0%, #0a1a0a 100%);
+}
+
+.ds-mode-hero {
+    margin-bottom: 30px;
+}
+
+.ds-hero-text {
+    text-align: center;
+    color: #1aff40;
+}
+
+.ds-greeting {
+    color: #1aff40;
+    text-shadow: 0 0 10px rgba(26, 255, 64, 0.5);
+    font-family: "Courier New", monospace;
+}
+
+.ds-name {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(26, 255, 64, 0.8);
+}
+
+.ds-title {
+    color: #1aff40;
+    text-shadow: 0 0 10px rgba(26, 255, 64, 0.5);
+}
+
+.ds-intro {
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.ds-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* About Section DS Mode */
+.ds-about-section {
+    background: linear-gradient(135deg, #020a02 0%, #0a1a0a 100%);
+}
+
+.ds-section-title {
+    color: #1aff40;
+    text-shadow: 0 0 15px rgba(26, 255, 64, 0.6);
+}
+
+.ds-about-terminal {
+    background: #0a0a0a;
+    border: 3px solid #1aff40;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(26, 255, 64, 0.3);
+}
+
+.terminal-header {
+    background: #1aff40;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: #020a02;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control-dot.red { background: #ff5f56; }
+.control-dot.yellow { background: #ffbd2e; }
+.control-dot.green { background: #27c93f; }
+
+.terminal-body {
+    padding: 20px;
+    font-family: "Courier New", monospace;
+    color: #1aff40;
+}
+
+.code-line {
+    margin: 5px 0;
+}
+
+.code-line.indent {
+    padding-left: 20px;
+}
+
+.keyword { color: #e366ff; }
+.variable { color: #66e0ff; }
+.property { color: #ffa7a7; }
+.string { color: #a5b4fc; }
+.comment { color: #666; }
+
+.typing-container {
+    display: inline;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+.ds-about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.data-card {
+    background: rgba(26, 255, 64, 0.05);
+    border: 1px solid rgba(26, 255, 64, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(26, 255, 64, 0.2);
+    border-color: #1aff40;
+}
+
+.card-icon {
+    font-size: 2.5em;
+    color: #1aff40;
+    margin-bottom: 15px;
+}
+
+.data-card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.data-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.ds-about-details {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.ds-detail {
+    color: #1aff40;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ds-detail a {
+    color: #66e0ff;
+}
+
+/* Skills Section DS Mode */
+.ds-skills-section {
+    background: linear-gradient(135deg, #020a02 0%, #0a1a0a 100%);
+}
+
+.ds-skills-pipboy {
+    margin-bottom: 40px;
+}
+
+.ds-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.ds-skill-card {
+    background: rgba(26, 255, 64, 0.05);
+    border: 1px solid rgba(26, 255, 64, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.ds-skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(26, 255, 64, 0.2);
+    border-color: #1aff40;
+}
+
+.ds-skill-icon {
+    font-size: 2.5em;
+    color: #1aff40;
+    margin-bottom: 15px;
+}
+
+.ds-skill-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.ds-tag {
+    background: rgba(26, 255, 64, 0.2);
+    color: #1aff40;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+}
+
+.ds-strengths-section {
+    margin-top: 40px;
+}
+
+.ds-strengths-title {
+    color: #1aff40;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.ds-strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.ds-strength-item {
+    background: rgba(26, 255, 64, 0.1);
+    border: 1px solid rgba(26, 255, 64, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1aff40;
+}
+
+.ds-strength-item i {
+    color: #1aff40;
+}
+
+/* Projects Section DS Mode */
+.ds-projects-section {
+    background: linear-gradient(135deg, #020a02 0%, #0a1a0a 100%);
+}
+
+.ds-theme-mode {
+    --color-dark-subtle: linear-gradient(to right, #1a0a0a, #020a02);
+    --color-dark: #000000;
+    --color-light: #fff7f7;
+    --color-white: #ffffff;
+    --color-red: #ff7a85d2;
+    --color-red-light: #ffa7a7;
+    --color-shadow-dark: rgb(31, 53, 31);
+    --color-shadow-text: rgb(0 0 0 / 65%);
+    --color-accent-bg: #1aff404f;
+    --shadow-light: -5px -5px 9px rgb(66, 48, 48);
+    --shadow-dark: 5px 5px 9px rgb(128, 97, 97);
+    --shadow-bar: -5px -5px 9px rgb(77 45 45 / 45%), 5px 5px 9px rgb(39 39 39);
+}
+
+.ds-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.ds-project-card {
+    margin: 10px 0;
+}
+
+/* Education Section DS Mode */
+.ds-education-section {
+    background: linear-gradient(135deg, #020a02 0%, #0a1a0a 100%);
+}
+
+.ds-ticket-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Contact Section DS Mode */
+.ds-contact-section {
+    background: linear-gradient(135deg, #020a02 0%, #0a1a0a 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.ds-contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide original elements in DS mode */
+body.ds-mode-active .hero-content > .hero-text:not(.ds-hero-text) {
+    display: none;
+}
+
+body.ds-mode-active .skills-grid:not(.ds-skills-grid) {
+    display: none;
+}
+
+body.ds-mode-active .projects-grid:not(.ds-projects-grid) {
+    display: none;
+}
+
+body.ds-mode-active .timeline {
+    display: none;
+}
+
+body.ds-mode-active .contact-content:not(.ds-contact-container) {
+    display: none;
+}
+
+body.ds-mode-active .about-content > p {
+    display: none;
+}
+
+body.ds-mode-active .about-content > .about-details:not(.ds-about-details) {
+    display: none;
+}
+
+body.ds-mode-active .strengths-section:not(.ds-strengths-section) {
+    display: none;
+}
