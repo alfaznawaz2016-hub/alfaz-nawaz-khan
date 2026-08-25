@@ -34,6 +34,12 @@
         <i class="fas fa-moon"></i>
     </button>
 
+    <!-- Data Science Mode Toggle -->
+    <button class="ds-mode-toggle" id="dsModeToggle" aria-label="Toggle Data Science Mode">
+        <i class="fas fa-brain"></i>
+        <span>DS Mode</span>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -53,54 +59,169 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero ds-hero">
         <div class="container hero-content">
-            <div class="hero-text fade-in">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Md. Alfaz Nawaz Khan Shrabon</h1>
-                <h2 class="hero-title">Diploma Engineering Student | Data Analyst | Web Developer</h2>
-                <p class="hero-intro">
+            <div class="pipboy-wrapper ds-mode-hero">
+                <input type="radio" name="pipboy-tab" id="tab-stat" checked>
+                <input type="radio" name="pipboy-tab" id="tab-inv">
+                <input type="radio" name="pipboy-tab" id="tab-data">
+                
+                <div class="pipboy-chassis">
+                    <div class="screw tl"></div>
+                    <div class="screw tr"></div>
+                    <div class="screw bl"></div>
+                    <div class="screw br"></div>
+                    
+                    <div class="crt-screen">
+                        <div class="screen-glass"></div>
+                        <div class="scanlines"></div>
+                        
+                        <div class="boot-sequence">
+                            <div class="top-bar">
+                                <span class="dynamic-title bold">SYS_STATUS</span>
+                                <div class="line flexible"></div>
+                                <div class="stats-info">
+                                    <span>LVL</span>
+                                    <span>24</span>
+                                    <span>HP</span>
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="middle-section">
+                                <div class="content-stat tab-content" style="display: flex;">
+                                    <div class="side-menu">
+                                        <label for="tab-stat" class="nav-item active-box-static">STATUS</label>
+                                        <label for="tab-inv" class="nav-item">INVENTORY</label>
+                                        <label for="tab-data" class="nav-item">DATA_LINK</label>
+                                    </div>
+                                    
+                                    <div class="right-menu">
+                                        <div class="terminal-block">
+                                            <div class="time">ALFAZ</div>
+                                            <div class="date">DATA SCIENTIST</div>
+                                        </div>
+                                        <div class="rad-text">
+                                            <div class="hazard-symbol">
+                                                <div class="hazard-core"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="content-inv tab-content">
+                                    <ul class="inventory-list">
+                                        <li class="active-terminal-line"><span>PYTHON</span><span>[EXPERT]</span></li>
+                                        <li><span>POWER BI</span><span>[ADVANCED]</span></li>
+                                        <li><span>SQL</span><span>[INTERMEDIATE]</span></li>
+                                        <li><span>EXCEL</span><span>[EXPERT]</span></li>
+                                        <li><span>MACHINE LEARNING</span><span>[LEARNING]</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="content-data tab-content">
+                                    <div class="radar-container">
+                                        <span></span>
+                                        <div class="blip"></div>
+                                    </div>
+                                    <div class="rad-text">SCANNING OPPORTUNITIES...</div>
+                                </div>
+                            </div>
+                            
+                            <div class="bottom-bar">
+                                <div class="nav-item">CAPS: 9999</div>
+                                <div class="line flexible"></div>
+                                <div class="nav-item">23:59<span class="blink-colon">:</span>59</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-text fade-in ds-hero-text">
+                <p class="hero-greeting ds-greeting">// INITIALIZING_PROFILE</p>
+                <h1 class="hero-name ds-name">Md. Alfaz Nawaz Khan Shrabon</h1>
+                <h2 class="hero-title ds-title">Diploma Engineering Student | Data Analyst | Web Developer</h2>
+                <p class="hero-intro ds-intro">
                     Aspiring Diploma Graduate with a focus on real-world data projects and AI-assisted web applications. 
                     Passionate about transforming raw data into actionable insights through Python, Power BI, and modern web technologies.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <div class="hero-buttons ds-buttons">
+                    <a href="#projects" class="glowbutton btn-ds-primary">View Projects</a>
+                    <a href="#contact" class="glowbutton btn-ds-secondary">Get In Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section ds-about-section">
         <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-content fade-in">
-                <p>
-                    My journey into data analysis and web development began with a curiosity about how data shapes decisions in the real world. 
-                    As a Diploma Engineering student in Computer Science, I've dedicated myself to mastering tools like Python, Excel, and Power BI 
-                    to uncover meaningful patterns from complex datasets.
-                </p>
-                <p>
-                    What drives me is the ability to turn raw numbers into clear, actionable insights that can impact business strategies and 
-                    operational efficiency. I'm particularly fascinated by the intersection of data analysis and web development, where I leverage 
-                    AI-assisted coding ("Vibe Coding") to build practical solutions faster.
-                </p>
-                <p>
-                    Currently, I'm focused on expanding my skills in SQL, advanced data visualization, and Flask web development while building 
-                    a portfolio of real-world projects that demonstrate my ability to solve practical problems with data.
-                </p>
+            <h2 class="section-title fade-in ds-section-title">About Me</h2>
+            <div class="about-content fade-in ds-about-content">
+                <div class="ds-about-terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-title">USER_PROFILE.dat</span>
+                        <div class="terminal-controls">
+                            <span class="control-dot red"></span>
+                            <span class="control-dot yellow"></span>
+                            <span class="control-dot green"></span>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="code-line"><span class="keyword">const</span> <span class="variable">profile</span> = {</div>
+                        <div class="code-line indent"><span class="property">name</span>: <span class="string">"Md. Alfaz Nawaz Khan Shrabon"</span>,</div>
+                        <div class="code-line indent"><span class="property">role</span>: <span class="string">"Data Analyst & Web Developer"</span>,</div>
+                        <div class="code-line indent"><span class="property">location</span>: <span class="string">"Bangladesh"</span>,</div>
+                        <div class="code-line indent"><span class="property">passion</span>: <span class="string">"Transforming raw data into actionable insights"</span>,</div>
+                        <div class="code-line indent"><span class="property">tools</span>: [<span class="string">"Python"</span>, <span class="string">"Power BI"</span>, <span class="string">"Excel"</span>, <span class="string">"SQL"</span>],</div>
+                        <div class="code-line indent"><span class="property">mission</span>: <span class="string">"Solve practical problems with data"</span></div>
+                        <div class="code-line">};</div>
+                        <div class="code-line">&nbsp;</div>
+                        <div class="code-line"><span class="comment">// My journey into data analysis...</span></div>
+                        <div class="code-line typing-container">
+                            <span class="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="about-details">
-                    <div class="detail-item">
+                <div class="ds-about-cards">
+                    <div class="data-card">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Explorer</h3>
+                        <p>Uncovering hidden patterns in complex datasets through statistical analysis and visualization.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-network"></i>
+                        </div>
+                        <h3>AI Collaborator</h3>
+                        <p>Leveraging AI-assisted coding to build practical solutions faster and more efficiently.</p>
+                    </div>
+                    
+                    <div class="data-card">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Problem Solver</h3>
+                        <p>Transforming raw numbers into clear, actionable insights that impact business strategies.</p>
+                    </div>
+                </div>
+                
+                <div class="about-details ds-about-details">
+                    <div class="detail-item ds-detail">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Gopalpur, Lalpur, Natore, Bangladesh</span>
                     </div>
-                    <div class="detail-item">
+                    <div class="detail-item ds-detail">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:alfaz.nawaz.khan@outlook.com">alfaz.nawaz.khan@outlook.com</a>
                     </div>
-                    <div class="detail-item">
+                    <div class="detail-item ds-detail">
                         <i class="fas fa-phone"></i>
                         <a href="tel:+8801714864556">+88 01714-864556</a>
                     </div>
@@ -110,106 +231,187 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills section ds-skills-section">
         <div class="container">
-            <h2 class="section-title fade-in">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Programming</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                    </div>
-                </div>
+            <h2 class="section-title fade-in ds-section-title">Skills & Expertise</h2>
+            
+            <div class="pipboy-wrapper ds-skills-pipboy fade-in">
+                <input type="radio" name="pipboy-tab" id="tab-stat-skills" checked>
+                <input type="radio" name="pipboy-tab" id="tab-inv-skills">
+                <input type="radio" name="pipboy-tab" id="tab-data-skills">
                 
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Flask (Basic)</span>
-                        <span class="tag">Vibe Coding</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Analysis</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Excel</span>
-                        <span class="tag">Power BI</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Data Visualization</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Excel</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Power BI</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Tools</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Excel</span>
-                        <span class="tag">PowerPoint</span>
-                        <span class="tag">Power BI</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Core Concepts</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Data Cleaning</span>
-                        <span class="tag">Data Analysis</span>
-                        <span class="tag">Dashboard Creation</span>
-                        <span class="tag">EDA</span>
+                <div class="pipboy-chassis">
+                    <div class="screw tl"></div>
+                    <div class="screw tr"></div>
+                    <div class="screw bl"></div>
+                    <div class="screw br"></div>
+                    
+                    <div class="crt-screen">
+                        <div class="screen-glass"></div>
+                        <div class="scanlines"></div>
+                        
+                        <div class="boot-sequence">
+                            <div class="top-bar">
+                                <span class="dynamic-title bold">SYS_STATUS</span>
+                                <div class="line flexible"></div>
+                                <div class="stats-info">
+                                    <span>LVL</span>
+                                    <span>24</span>
+                                    <span>HP</span>
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="middle-section">
+                                <div class="content-stat tab-content" style="display: flex;">
+                                    <div class="side-menu">
+                                        <label for="tab-stat-skills" class="nav-item active-box-static">STATUS</label>
+                                        <label for="tab-inv-skills" class="nav-item">INVENTORY</label>
+                                        <label for="tab-data-skills" class="nav-item">DATA_LINK</label>
+                                    </div>
+                                    
+                                    <div class="right-menu">
+                                        <div class="terminal-block">
+                                            <div class="time">SKILLS</div>
+                                            <div class="date">LOADED</div>
+                                        </div>
+                                        <div class="rad-text">
+                                            <div class="hazard-symbol">
+                                                <div class="hazard-core"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="content-inv tab-content">
+                                    <ul class="inventory-list">
+                                        <li class="active-terminal-line"><span>PYTHON</span><span>[EXPERT]</span></li>
+                                        <li><span>POWER BI</span><span>[ADVANCED]</span></li>
+                                        <li><span>SQL</span><span>[INTERMEDIATE]</span></li>
+                                        <li><span>EXCEL</span><span>[EXPERT]</span></li>
+                                        <li><span>MATPLOTLIB</span><span>[ADVANCED]</span></li>
+                                        <li><span>SEABORN</span><span>[ADVANCED]</span></li>
+                                        <li><span>PANDAS</span><span>[EXPERT]</span></li>
+                                        <li><span>NUMPY</span><span>[EXPERT]</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="content-data tab-content">
+                                    <div class="radar-container">
+                                        <span></span>
+                                        <div class="blip"></div>
+                                    </div>
+                                    <div class="rad-text">SCANNING SKILLS...</div>
+                                </div>
+                            </div>
+                            
+                            <div class="bottom-bar">
+                                <div class="nav-item">CAPS: 9999</div>
+                                <div class="line flexible"></div>
+                                <div class="nav-item">23:59<span class="blink-colon">:</span>59</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="strengths-section fade-in">
-                <h3 class="strengths-title">Strengths</h3>
-                <div class="strengths-grid">
-                    <div class="strength-item">
+            <div class="skills-grid ds-skills-grid">
+                <div class="skill-card fade-in ds-skill-card">
+                    <div class="skill-icon ds-skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <div class="skill-tags ds-skill-tags">
+                        <span class="tag ds-tag">Python</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in ds-skill-card">
+                    <div class="skill-icon ds-skill-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <div class="skill-tags ds-skill-tags">
+                        <span class="tag ds-tag">Flask (Basic)</span>
+                        <span class="tag ds-tag">Vibe Coding</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in ds-skill-card">
+                    <div class="skill-icon ds-skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <div class="skill-tags ds-skill-tags">
+                        <span class="tag ds-tag">Python</span>
+                        <span class="tag ds-tag">SQL</span>
+                        <span class="tag ds-tag">Excel</span>
+                        <span class="tag ds-tag">Power BI</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in ds-skill-card">
+                    <div class="skill-icon ds-skill-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Data Visualization</h3>
+                    <div class="skill-tags ds-skill-tags">
+                        <span class="tag ds-tag">Excel</span>
+                        <span class="tag ds-tag">Python</span>
+                        <span class="tag ds-tag">Power BI</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in ds-skill-card">
+                    <div class="skill-icon ds-skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools</h3>
+                    <div class="skill-tags ds-skill-tags">
+                        <span class="tag ds-tag">Excel</span>
+                        <span class="tag ds-tag">PowerPoint</span>
+                        <span class="tag ds-tag">Power BI</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in ds-skill-card">
+                    <div class="skill-icon ds-skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Core Concepts</h3>
+                    <div class="skill-tags ds-skill-tags">
+                        <span class="tag ds-tag">Data Cleaning</span>
+                        <span class="tag ds-tag">Data Analysis</span>
+                        <span class="tag ds-tag">Dashboard Creation</span>
+                        <span class="tag ds-tag">EDA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="strengths-section fade-in ds-strengths-section">
+                <h3 class="strengths-title ds-strengths-title">Strengths</h3>
+                <div class="strengths-grid ds-strengths-grid">
+                    <div class="strength-item ds-strength-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Prompt Engineering</span>
                     </div>
-                    <div class="strength-item">
+                    <div class="strength-item ds-strength-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Working with Multiple AIs</span>
                     </div>
-                    <div class="strength-item">
+                    <div class="strength-item ds-strength-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Basic AI Integrations</span>
                     </div>
-                    <div class="strength-item">
+                    <div class="strength-item ds-strength-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Consistent Learner</span>
                     </div>
-                    <div class="strength-item">
+                    <div class="strength-item ds-strength-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Ability to Work with Real Datasets</span>
                     </div>
-                    <div class="strength-item">
+                    <div class="strength-item ds-strength-item">
                         <i class="fas fa-check-circle"></i>
                         <span>Focused on Practical Implementation</span>
                     </div>
@@ -219,170 +421,249 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects section">
+    <section id="projects" class="projects section ds-projects-section">
         <div class="container">
-            <h2 class="section-title fade-in">Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Health and Fitness Tracking System</h3>
-                        <p>Analyzed weekly fitness data of 20 individuals using NumPy and pandas to track performance metrics and health trends.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">NumPy</span>
-                            <span class="tech-tag">pandas</span>
+            <h2 class="section-title fade-in ds-section-title">Projects</h2>
+            <div class="theme-light ds-theme-mode">
+                <div class="projects-grid ds-projects-grid">
+                    <!-- Project 1 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">DATA ANALYSIS</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject1" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 01</span>
+                            <h3 class="heading">Health and Fitness Tracking System</h3>
+                        </div>
+                        <p class="text-green">Analyzed weekly fitness data of 20 individuals using NumPy and pandas to track performance metrics and health trends.</p>
+                        <div class="tags">
+                            <span>NumPy</span>
+                            <span>pandas</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject1" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Coffee Shop Sales Analysis</h3>
-                        <p>Monthly gross sales, order volume, discounts, and net sales trends analysis across 2017–2019 using pivot tables.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Pivot Tables</span>
+                    
+                    <!-- Project 2 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">SALES ANALYSIS</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject2" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 02</span>
+                            <h3 class="heading">Coffee Shop Sales Analysis</h3>
+                        </div>
+                        <p class="text-green">Monthly gross sales, order volume, discounts, and net sales trends analysis across 2017–2019 using pivot tables.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Pivot Tables</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject2" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Student Mobile Phone Survey Analysis</h3>
-                        <p>Pivot tables breaking down education-related phone usage and self-reported health ratings by gender.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Survey Analysis</span>
+                    
+                    <!-- Project 3 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">SURVEY ANALYSIS</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject3" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 03</span>
+                            <h3 class="heading">Student Mobile Phone Survey</h3>
+                        </div>
+                        <p class="text-green">Pivot tables breaking down education-related phone usage and self-reported health ratings by gender.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Survey Analysis</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject3" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>BMW Car Sales Dataset Analysis</h3>
-                        <p>Pricing, mileage, engine size, and revenue analysis across models, regions, and fuel/transmission types.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Data Analysis</span>
+                    
+                    <!-- Project 4 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">AUTOMOTIVE DATA</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject4" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 04</span>
+                            <h3 class="heading">BMW Car Sales Dataset</h3>
+                        </div>
+                        <p class="text-green">Pricing, mileage, engine size, and revenue analysis across models, regions, and fuel/transmission types.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject4" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Restaurant Data Cleaning</h3>
-                        <p>Standardizing names, addresses, categories, and open/closed status across a messy multi-city dataset.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Data Cleaning</span>
+                    
+                    <!-- Project 5 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">DATA CLEANING</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject5" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 05</span>
+                            <h3 class="heading">Restaurant Data Cleaning</h3>
+                        </div>
+                        <p class="text-green">Standardizing names, addresses, categories, and open/closed status across a messy multi-city dataset.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Data Cleaning</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject5" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Zara Clothing Sales Dashboard</h3>
-                        <p>Pivot analysis of revenue by product position, section (men/women), season, material, and origin country.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Dashboard</span>
+                    
+                    <!-- Project 6 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">DASHBOARD</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject6" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 06</span>
+                            <h3 class="heading">Zara Clothing Sales Dashboard</h3>
+                        </div>
+                        <p class="text-green">Pivot analysis of revenue by product position, section (men/women), season, material, and origin country.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Dashboard</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject6" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 7 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Global Life Expectancy Dashboard</h3>
-                        <p>Interactive country/year lookup with regional and gender-based life expectancy trends (1960–2022).</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Power BI</span>
+                    
+                    <!-- Project 7 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">HEALTH METRICS</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject7" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 07</span>
+                            <h3 class="heading">Global Life Expectancy</h3>
+                        </div>
+                        <p class="text-green">Interactive country/year lookup with regional and gender-based life expectancy trends (1960–2022).</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Power BI</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject7" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 8 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Chocolate Sales Tracker</h3>
-                        <p>Sales rep performance tracking by country, product, order amount, and boxes shipped.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Sales Analysis</span>
+                    
+                    <!-- Project 8 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">SALES TRACKING</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject8" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 08</span>
+                            <h3 class="heading">Chocolate Sales Tracker</h3>
+                        </div>
+                        <p class="text-green">Sales rep performance tracking by country, product, order amount, and boxes shipped.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Sales Analysis</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject8" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 9 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>MBA Student Employability Analysis</h3>
-                        <p>Undergrad/MBA grades, work experience, and placement outcomes vs. salary and employability scores.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Statistical Analysis</span>
+                    
+                    <!-- Project 9 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">EDUCATION DATA</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="https://github.com/AlfazNawazKhan/excelproject9" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 09</span>
+                            <h3 class="heading">MBA Student Employability</h3>
+                        </div>
+                        <p class="text-green">Undergrad/MBA grades, work experience, and placement outcomes vs. salary and employability scores.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Statistical Analysis</span>
+                        </div>
+                        <a href="https://github.com/AlfazNawazKhan/excelproject9" target="_blank" rel="noopener noreferrer" class="more-button">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 10 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Student Performance Dashboard</h3>
-                        <p>Visualized student performance using charts and graphs with matplotlib and seaborn.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">matplotlib</span>
-                            <span class="tech-tag">seaborn</span>
+                    
+                    <!-- Project 10 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">VISUALIZATION</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-github disabled">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 10</span>
+                            <h3 class="heading">Student Performance Dashboard</h3>
+                        </div>
+                        <p class="text-green">Visualized student performance using charts and graphs with matplotlib and seaborn.</p>
+                        <div class="tags">
+                            <span>matplotlib</span>
+                            <span>seaborn</span>
+                        </div>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="more-button disabled">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
-                </div>
-                
-                <!-- Project 11 -->
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3>Excel Revenue Dashboard</h3>
-                        <p>Imported, analyzed, and visualized Excel data with automated calculations and dynamic reports.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">Python</span>
+                    
+                    <!-- Project 11 -->
+                    <div class="card fade-in ds-project-card">
+                        <div class="flex">
+                            <span class="bar-label text-light">REVENUE DATA</span>
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
                         </div>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-github disabled">
+                        <div class="bg-custom">
+                            <span class="pr-day">PROJECT 11</span>
+                            <h3 class="heading">Excel Revenue Dashboard</h3>
+                        </div>
+                        <p class="text-green">Imported, analyzed, and visualized Excel data with automated calculations and dynamic reports.</p>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>Python</span>
+                        </div>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="more-button disabled">
                             <i class="fab fa-github"></i> View on GitHub
                         </a>
                     </div>
@@ -392,33 +673,104 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education section">
+    <section id="education" class="education section ds-education-section">
         <div class="container">
-            <h2 class="section-title fade-in">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2026</div>
-                        <h3>Diploma in Engineering</h3>
-                        <div class="timeline-institution">Rajshahi Polytechnic Institute</div>
-                        <div class="timeline-department">Computer Science and Technology</div>
-                        <div class="timeline-details">
-                            <span class="cgpa-badge">CGPA: 3.10/4.00</span>
-                            <span class="status-badge completed">Completed</span>
+            <h2 class="section-title fade-in ds-section-title">Education</h2>
+            <div class="ticket-canvas ds-ticket-wrapper">
+                <div class="ticket-wrapper fade-in">
+                    <div class="ticket">
+                        <div class="t-main">
+                            <div class="t-content">
+                                <div class="t-header">
+                                    <div class="t-logo">
+                                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                                        <span>EDUCATION</span>
+                                    </div>
+                                    <div class="t-type">ADMIT ONE</div>
+                                </div>
+                                <div class="t-title">Diploma in Engineering</div>
+                                <div class="t-subtitle">Computer Science and Technology</div>
+                                <div class="t-details">
+                                    <div class="t-detail-item">
+                                        <div class="t-label">INSTITUTION</div>
+                                        <div class="t-value">Rajshahi Polytechnic Institute</div>
+                                    </div>
+                                    <div class="t-detail-item">
+                                        <div class="t-label">YEAR</div>
+                                        <div class="t-value">2026</div>
+                                    </div>
+                                    <div class="t-detail-item">
+                                        <div class="t-label">CGPA</div>
+                                        <div class="t-value">3.10/4.00</div>
+                                    </div>
+                                    <div class="t-detail-item">
+                                        <div class="t-label">STATUS</div>
+                                        <div class="t-value">COMPLETED</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-perforation">
+                            <div class="t-perf-line"></div>
+                        </div>
+                        <div class="t-stub">
+                            <div class="t-barcode-container">
+                                <div class="t-barcode"></div>
+                                <div class="t-barcode-id">EDU-2026-CSE-001</div>
+                            </div>
+                            <div class="t-admit">
+                                <div class="t-admit-text">ADMIT NO.</div>
+                                <div class="t-admit-num">2026</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021</div>
-                        <h3>Secondary School Certificate</h3>
-                        <div class="timeline-institution">Gopalpur High School, Lalpur, Natore</div>
-                        <div class="timeline-details">
-                            <span class="cgpa-badge">CGPA: 4.89/5.00</span>
-                            <span class="status-badge completed">Completed</span>
+                <div class="ticket-wrapper fade-in">
+                    <div class="ticket">
+                        <div class="t-main">
+                            <div class="t-content">
+                                <div class="t-header">
+                                    <div class="t-logo">
+                                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                                        <span>EDUCATION</span>
+                                    </div>
+                                    <div class="t-type">ADMIT ONE</div>
+                                </div>
+                                <div class="t-title">Secondary School Certificate</div>
+                                <div class="t-subtitle">Gopalpur High School, Lalpur, Natore</div>
+                                <div class="t-details">
+                                    <div class="t-detail-item">
+                                        <div class="t-label">INSTITUTION</div>
+                                        <div class="t-value">Gopalpur High School</div>
+                                    </div>
+                                    <div class="t-detail-item">
+                                        <div class="t-label">YEAR</div>
+                                        <div class="t-value">2021</div>
+                                    </div>
+                                    <div class="t-detail-item">
+                                        <div class="t-label">CGPA</div>
+                                        <div class="t-value">4.89/5.00</div>
+                                    </div>
+                                    <div class="t-detail-item">
+                                        <div class="t-label">STATUS</div>
+                                        <div class="t-value">COMPLETED</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-perforation">
+                            <div class="t-perf-line"></div>
+                        </div>
+                        <div class="t-stub">
+                            <div class="t-barcode-container">
+                                <div class="t-barcode"></div>
+                                <div class="t-barcode-id">SSC-2021-GHS-001</div>
+                            </div>
+                            <div class="t-admit">
+                                <div class="t-admit-text">ADMIT NO.</div>
+                                <div class="t-admit-num">2021</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -427,51 +779,43 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section ds-contact-section">
         <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
-            <div class="contact-content fade-in">
-                <p class="contact-intro">
-                    I'm always open to discussing new opportunities, collaborations, or just having a chat about data and technology. 
-                    Feel free to reach out!
-                </p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:alfaz.nawaz.khan@outlook.com">alfaz.nawaz.khan@outlook.com</a>
+            <h2 class="section-title fade-in ds-section-title">Get In Touch</h2>
+            <div class="container ds-contact-container">
+                <div class="card-container fade-in">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <div class="title">CONTACT INFO</div>
+                        </div>
+                        <div class="card-body">
+                            <a href="mailto:alfaz.nawaz.khan@outlook.com" class="svg-card" aria-label="Email">
+                                <svg class="face" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </a>
+                            <a href="tel:+8801714864556" class="svg-card" aria-label="Phone">
+                                <svg class="twit" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            </a>
+                            <a href="#" class="svg-card" aria-label="Location">
+                                <svg class="insta" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/1CtKbFbs4C/" target="_blank" rel="noopener noreferrer" class="svg-card" aria-label="Facebook">
+                                <svg class="whats" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/alfaz-nawaz-012961237/" target="_blank" rel="noopener noreferrer" class="svg-card" aria-label="LinkedIn">
+                                <svg class="whats" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            </a>
+                            <a href="https://github.com/AlfazNawazKhan" target="_blank" rel="noopener noreferrer" class="svg-card" aria-label="GitHub">
+                                <svg class="whats" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2.11 1-2.92c-.1-.25-.43-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.53 1.35.2 2.39.1 2.64c.65.81 1 1.81 1 2.92c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                            </a>
+                        </div>
+                        <div class="card-footer">
+                            <p style="color: hsl(192, 100%, 88%); font-size: 0.8em; text-align: center;">
+                                alfaz.nawaz.khan@outlook.com<br>
+                                +88 01714-864556<br>
+                                Gopalpur, Lalpur, Natore, Bangladesh
+                            </p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <a href="tel:+8801714864556">+88 01714-864556</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <span>Gopalpur, Lalpur, Natore, Bangladesh</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1CtKbFbs4C/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/alfaz-nawaz-012961237/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/AlfazNawazKhan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
                 </div>
             </div>
         </div>
