@@ -15,6 +15,21 @@ if (hamburger && navMenu) {
     });
 }
 
+// Mode Switcher Functionality
+function toggleMode() {
+    const body = document.body;
+    const modeSwitcher = document.getElementById('modeSwitcher');
+    const currentMode = body.getAttribute('data-mode');
+    
+    if (currentMode === 'normal') {
+        body.setAttribute('data-mode', 'data-science');
+        modeSwitcher.innerHTML = '<i class="fas fa-user"></i><span>Normal Mode</span>';
+    } else {
+        body.setAttribute('data-mode', 'normal');
+        modeSwitcher.innerHTML = '<i class="fas fa-flask"></i><span>Data Science Mode</span>';
+    }
+}
+
 // Scroll animations
 const observerOptions = {
     threshold: 0.1,
@@ -53,9 +68,19 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            const currentMode = document.body.getAttribute('data-mode');
+            if (currentMode === 'data-science') {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            }
         } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            const currentMode = document.body.getAttribute('data-mode');
+            if (currentMode === 'data-science') {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
         }
     }
 });

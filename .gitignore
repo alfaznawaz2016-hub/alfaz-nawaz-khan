@@ -1,20 +1,23 @@
-```
+```gitignore
 # Compiled and build artifacts
 *.pyc
 __pycache__/
 *.o
 *.obj
-dist/
-build/
-target/
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
 # Dependencies
-.venv/
-venv/
 node_modules/
-.julia/
-zig*/
-.deps/
+venv/
+.venv/
+.env
+.env.local
+.env.*
 
 # Logs and temp files
 *.log
@@ -22,16 +25,9 @@ zig*/
 *.swp
 *.swo
 
-# Environment
-.env
-.env.local
-.env.*
-
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
 # System files
 .DS_Store
@@ -42,7 +38,7 @@ coverage/
 htmlcov/
 .coverage
 
-# Compression
+# Compressed files
 *.zip
 *.gz
 *.tar
@@ -65,4 +61,94 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+
+# Build directories
+dist/
+build/
+target/
+.gradle/
+
+# Python specific
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.so
+.Python
+*.egg-info/
+.eggs/
+.mypy_cache/
+.pytest_cache/
+.tox/
+.coverage
+nosetests.xml
+.coverage.*
+.cache
+.pytest_cache/
+.hypothesis/
+.venv/
+venv/
+ENV/
+env/
+
+# JavaScript/Node specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnp/
+.pnp.js
+.webpack/
+!.vscode
+.vscode
+!.idea
+.idea
+*.tsbuildinfo
+.next/
+.nuxt/
+.vuepress/dist
+.static
+.nuxt
+dist
+build
+coverage
+.nyc_output
+coverage/lcov-report
+lib-cov
+*.lcov
+coverage-final.json
+.jestrc
+jest.config.js
+.babelrc
+.browserslistrc
+.eslintrc
+.eslintignore
+.prettierrc
+.prettierignore
+.stylelintrc
+.stylelintignore
+.commitlintrc
+.lintstagedrc
+.husky/
+.cz-config.js
+.commitlintrc.js
+.remarkrc
+.markdownlint.json
+.editorconfig
+.gitattributes
+.gitignore
+.pre-commit-config.yaml
+.mdlrc
+.markdown-link-check.json
+.textlintrc
+.vale.ini
+ vale.ini
+ vale.toml
+.vale
+vale.ini
+vale.toml
+vale
+.vale.ini
 ```
