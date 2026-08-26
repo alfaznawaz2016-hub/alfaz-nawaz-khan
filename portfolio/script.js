@@ -1,6 +1,6 @@
 /**
  * Portfolio Website JavaScript
- * Handles navigation, animations, and user interactions
+ * Handles navigation, animations, user interactions, and theme switching
  */
 
 (function() {
@@ -20,7 +20,11 @@
         burger: null,
         navLinks: null,
         navLinksItems: null,
-        navbar: null
+        navbar: null,
+        themeToggle: null,
+        themeOptions: null,
+        themeOptionBtns: null,
+        mainContent: null
     };
 
     /**
@@ -31,6 +35,10 @@
         elements.navLinks = document.querySelector('.nav-links');
         elements.navLinksItems = document.querySelectorAll('.nav-links li');
         elements.navbar = document.querySelector('.navbar');
+        elements.themeToggle = document.getElementById('themeToggle');
+        elements.themeOptions = document.getElementById('themeOptions');
+        elements.themeOptionBtns = document.querySelectorAll('.theme-option');
+        elements.mainContent = document.getElementById('mainContent');
     }
 
     /**
@@ -171,6 +179,109 @@
     }
 
     /**
+     * Theme Switcher Functionality
+     */
+    function initThemeSwitcher() {
+        if (!elements.themeToggle || !elements.themeOptions) return;
+
+        // Load saved theme from localStorage
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'default';
+        applyTheme(savedTheme);
+
+        // Toggle theme options dropdown
+        elements.themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            elements.themeOptions.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!elements.themeOptions.contains(e.target) && !elements.themeToggle.contains(e.target)) {
+                elements.themeOptions.classList.remove('show');
+            }
+        });
+
+        // Handle theme selection
+        elements.themeOptionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                applyTheme(theme);
+                elements.themeOptions.classList.remove('show');
+            });
+        });
+    }
+
+    /**
+     * Apply theme to the page
+     */
+    function applyTheme(themeName) {
+        // Remove all theme classes
+        document.body.classList.remove('theme-data-science');
+        
+        // Update option buttons
+        elements.themeOptionBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.theme === themeName) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Apply selected theme
+        if (themeName !== 'default') {
+            document.body.classList.add(`theme-${themeName}`);
+        }
+
+        // Save to localStorage
+        localStorage.setItem('portfolio-theme', themeName);
+
+        // Initialize Pip-Boy tabs for Data Science mode
+        if (themeName === 'data-science') {
+            initPipBoyTabs();
+        }
+    }
+
+    /**
+     * Initialize Pip-Boy Terminal Tabs (for Data Science Mode)
+     */
+    function initPipBoyTabs() {
+        const radioBtns = document.querySelectorAll('.radio-btn');
+        const contentSections = {
+            'tab-stat': 'content-stat',
+            'tab-inv': 'content-inv',
+            'tab-data': 'content-data'
+        };
+
+        radioBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                radioBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                // Hide all content sections
+                Object.values(contentSections).forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) section.classList.remove('active');
+                });
+
+                // Show corresponding content section
+                const tabId = btn.id;
+                const contentId = contentSections[tabId];
+                const contentSection = document.getElementById(contentId);
+                if (contentSection) {
+                    contentSection.classList.add('active');
+                }
+            });
+        });
+
+        // Activate first tab by default
+        const firstTab = document.getElementById('tab-stat');
+        if (firstTab) {
+            firstTab.click();
+        }
+    }
+
+    /**
      * Display welcome message in console
      */
     function displayConsoleMessage() {
@@ -201,6 +312,9 @@
         // Animations
         initAnimations();
         initProjectCardEffects();
+        
+        // Theme switcher
+        initThemeSwitcher();
         
         // Console message
         displayConsoleMessage();
