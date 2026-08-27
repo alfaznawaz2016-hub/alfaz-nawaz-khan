@@ -522,6 +522,409 @@ section h2::after {
     }
 }
 
+/* ============================================
+   DATA SCIENCE MODE THEME
+   Cyberpunk/Holographic Terminal Aesthetic
+   ============================================ */
+
+/* Theme Switcher UI */
+.theme-switcher {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.theme-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.theme-options {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 180px;
+}
+
+.theme-options.show {
+    display: flex;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.theme-option:hover {
+    background: var(--light-bg);
+}
+
+.theme-option.active {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--white);
+}
+
+/* Data Science Mode CSS Variables */
+.theme-data-science {
+    --ds-bg-primary: #020a02;
+    --ds-bg-secondary: #1e1e24;
+    --ds-bg-tertiary: #2b2b36;
+    --ds-accent-primary: #1aff40;
+    --ds-accent-secondary: #66e0ff;
+    --ds-accent-tertiary: #7c3aed;
+    --ds-text-primary: #f8fafc;
+    --ds-text-muted: #94a3b8;
+    --ds-glow-color: rgba(26, 255, 64, 0.6);
+    --ds-border-glow: rgba(102, 224, 255, 0.5);
+}
+
+/* Data Science Mode Global Styles */
+.theme-data-science body {
+    background-color: var(--ds-bg-primary);
+    color: var(--ds-text-primary);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.theme-data-science .navbar {
+    background-color: rgba(2, 10, 2, 0.95);
+    border-bottom: 1px solid var(--ds-accent-primary);
+    box-shadow: 0 0 20px var(--ds-glow-color);
+}
+
+.theme-data-science .logo {
+    color: var(--ds-accent-primary);
+    text-shadow: 0 0 10px var(--ds-glow-color);
+    background: none;
+    -webkit-text-fill-color: var(--ds-accent-primary);
+}
+
+.theme-data-science .nav-links a {
+    color: var(--ds-text-primary);
+}
+
+.theme-data-science .nav-links a:hover,
+.theme-data-science .nav-links a.active {
+    color: var(--ds-accent-primary);
+    text-shadow: 0 0 8px var(--ds-glow-color);
+}
+
+.theme-data-science .nav-links a::after {
+    background-color: var(--ds-accent-primary);
+    box-shadow: 0 0 5px var(--ds-glow-color);
+}
+
+/* Theme Switcher in Data Science Mode */
+.theme-data-science .theme-btn {
+    border-color: var(--ds-accent-primary);
+    background: var(--ds-bg-secondary);
+    color: var(--ds-accent-primary);
+    box-shadow: 0 0 15px var(--ds-glow-color);
+}
+
+.theme-data-science .theme-options {
+    background: var(--ds-bg-secondary);
+    border: 1px solid var(--ds-accent-primary);
+}
+
+.theme-data-science .theme-option {
+    color: var(--ds-text-primary);
+}
+
+.theme-data-science .theme-option:hover {
+    background: var(--ds-bg-tertiary);
+}
+
+.theme-data-science .theme-option.active {
+    background: linear-gradient(135deg, var(--ds-accent-primary), var(--ds-accent-secondary));
+    color: var(--ds-bg-primary);
+}
+
+/* Hero Section - Data Science Mode */
+.theme-data-science .hero {
+    background: var(--ds-bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-data-science .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(26, 255, 64, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 255, 64, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: grid-scroll-ds 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes grid-scroll-ds {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 60px; }
+}
+
+.theme-data-science .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(26, 255, 64, 0.03) 2px,
+        rgba(26, 255, 64, 0.03) 4px
+    );
+    pointer-events: none;
+    animation: scanline-ds 8s linear infinite;
+}
+
+@keyframes scanline-ds {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+.theme-data-science .hero-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(30, 30, 36, 0.8);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid var(--ds-accent-primary);
+    box-shadow: 0 0 30px var(--ds-glow-color), inset 0 0 20px rgba(26, 255, 64, 0.1);
+    backdrop-filter: blur(10px);
+    clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 0 100%);
+}
+
+.theme-data-science .hero h1 {
+    color: var(--ds-accent-secondary);
+    text-shadow: 0 0 20px var(--ds-border-glow);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.theme-data-science .tagline {
+    color: var(--ds-text-muted);
+    font-size: 1.1rem;
+}
+
+/* Glow Button - Data Science Mode */
+.theme-data-science .glowbutton {
+    --glow-color: rgb(26, 255, 64);
+    --glow-spread-color: rgba(26, 255, 64, 0.5);
+    --enhanced-glow-color: rgb(102, 224, 255);
+    --btn-color: rgb(2, 10, 2);
+    border: 0.2em solid var(--glow-color);
+    padding: 0.9em 2.5em;
+    color: var(--glow-color);
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 0 0.8em 0.2em var(--glow-color), 0 0 3em 0.8em var(--glow-spread-color), inset 0 0 0.5em 0.15em var(--glow-color);
+    text-shadow: 0 0 0.4em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.theme-data-science .glowbutton::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(1.5em);
+    opacity: 0.7;
+    transform: perspective(1.2em) rotateX(35deg) scale(1, 0.6);
+}
+
+.theme-data-science .glowbutton:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.2em var(--glow-color), 0 0 3em 1.5em var(--glow-spread-color), inset 0 0 0.5em 0.15em var(--glow-color);
+}
+
+.theme-data-science .glowbutton:active {
+    box-shadow: 0 0 0.5em 0.2em var(--glow-color), 0 0 2em 1.5em var(--glow-spread-color), inset 0 0 0.4em 0.15em var(--glow-color);
+    transform: scale(0.98);
+}
+
+.theme-data-science .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.theme-data-science .social-links {
+    margin-top: 2rem;
+}
+
+.theme-data-science .social-links a {
+    color: var(--ds-accent-secondary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.theme-data-science .social-links a:hover {
+    color: var(--ds-accent-primary);
+    text-shadow: 0 0 15px var(--ds-glow-color);
+    transform: translateY(-3px);
+}
+
+/* About Section - Data Science Mode */
+.theme-data-science .about {
+    background: var(--ds-bg-primary);
+    position: relative;
+}
+
+.theme-data-science .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.theme-data-science .about-info {
+    background: var(--ds-bg-secondary);
+    padding: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--ds-accent-primary);
+    box-shadow: 0 0 20px var(--ds-glow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-data-science .about-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ds-accent-primary), transparent);
+    animation: shimmer-ds 3s infinite;
+}
+
+@keyframes shimmer-ds {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.theme-data-science .about h2 {
+    color: var(--ds-accent-secondary);
+    text-shadow: 0 0 15px var(--ds-border-glow);
+}
+
+.theme-data-science .about h2::after {
+    background: linear-gradient(90deg, var(--ds-accent-primary), var(--ds-accent-secondary));
+    box-shadow: 0 0 10px var(--ds-glow-color);
+}
+
+.theme-data-science .about-info p {
+    color: var(--ds-text-muted);
+    line-height: 1.8;
+}
+
+.theme-data-science .personal-details {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--ds-bg-tertiary);
+    border-radius: 8px;
+    border-left: 3px solid var(--ds-accent-primary);
+}
+
+.theme-data-science .detail-item {
+    color: var(--ds-text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.theme-data-science .detail-item i {
+    color: var(--ds-accent-primary);
+}
+
+.theme-data-science .languages h3,
+.theme-data-science .strengths h3 {
+    color: var(--ds-accent-secondary);
+    margin-top: 1.5rem;
+}
+
+.theme-data-science .languages ul,
+.theme-data-science .strengths ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.theme-data-science .languages li,
+.theme-data-science .strengths li {
+    background: var(--ds-bg-tertiary);
+    border: 1px solid var(--ds-accent-primary);
+    color: var(--ds-text-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Skills Section - Data Science Mode (Hidden - Pip-Boy Replaces) */
+.theme-data-science .skills h2 {
+    color: var(--ds-accent-primary);
+    text-shadow: 0 0 15px var(--ds-glow-color);
+}
+
+.theme-data-science .skills h2::after {
+    background: var(--ds-accent-primary);
+    box-shadow: 0 0 10px var(--ds-glow-color);
+}
+
+.theme-data-science .skills-grid {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
