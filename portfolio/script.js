@@ -23,8 +23,7 @@
         navbar: null,
         themeToggle: null,
         themeOptions: null,
-        themeOptionBtns: null,
-        mainContent: null
+        themeOptionBtns: null
     };
 
     /**
@@ -38,7 +37,6 @@
         elements.themeToggle = document.getElementById('themeToggle');
         elements.themeOptions = document.getElementById('themeOptions');
         elements.themeOptionBtns = document.querySelectorAll('.theme-option');
-        elements.mainContent = document.getElementById('mainContent');
     }
 
     /**
@@ -120,11 +118,18 @@
     function updateNavbarBackground() {
         if (!elements.navbar) return;
         
-        const backgroundColor = window.scrollY > CONFIG.SCROLL_THRESHOLD 
-            ? 'rgba(255, 255, 255, 0.98)' 
-            : 'rgba(255, 255, 255, 1)';
+        const isDefaultTheme = !document.body.classList.contains('theme-data-science');
         
-        elements.navbar.style.backgroundColor = backgroundColor;
+        if (isDefaultTheme) {
+            const backgroundColor = window.scrollY > CONFIG.SCROLL_THRESHOLD 
+                ? 'rgba(255, 255, 255, 0.98)' 
+                : 'rgba(255, 255, 255, 1)';
+            
+            elements.navbar.style.backgroundColor = backgroundColor;
+        } else {
+            // Data Science Mode - keep the themed background
+            elements.navbar.style.backgroundColor = 'rgba(2, 10, 2, 0.95)';
+        }
     }
 
     /**
@@ -233,52 +238,6 @@
 
         // Save to localStorage
         localStorage.setItem('portfolio-theme', themeName);
-
-        // Initialize Pip-Boy tabs for Data Science mode
-        if (themeName === 'data-science') {
-            initPipBoyTabs();
-        }
-    }
-
-    /**
-     * Initialize Pip-Boy Terminal Tabs (for Data Science Mode)
-     */
-    function initPipBoyTabs() {
-        const radioBtns = document.querySelectorAll('.radio-btn');
-        const contentSections = {
-            'tab-stat': 'content-stat',
-            'tab-inv': 'content-inv',
-            'tab-data': 'content-data'
-        };
-
-        radioBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                radioBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                // Hide all content sections
-                Object.values(contentSections).forEach(id => {
-                    const section = document.getElementById(id);
-                    if (section) section.classList.remove('active');
-                });
-
-                // Show corresponding content section
-                const tabId = btn.id;
-                const contentId = contentSections[tabId];
-                const contentSection = document.getElementById(contentId);
-                if (contentSection) {
-                    contentSection.classList.add('active');
-                }
-            });
-        });
-
-        // Activate first tab by default
-        const firstTab = document.getElementById('tab-stat');
-        if (firstTab) {
-            firstTab.click();
-        }
     }
 
     /**
@@ -327,3 +286,4 @@
         init();
     }
 })();
+
